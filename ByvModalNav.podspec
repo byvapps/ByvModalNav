@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ByvModalNav'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of ByvModalNav.'
+  s.version          = '1.0.0'
+  s.summary          = 'UINavigationController with auto close button'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,15 +18,17 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+With this UINavigationController It's developed to quickly show modal views with close button.
+If onlyInRoot:Bool = true (default) the close button is added as leftBarButtonItem only in the root view controller. To dismiss the view you must need to back to the root view on the navigation controller
+If onlyInRoot:Bool = false the close button is added as rightBarButtonItem in all view controllers. The modal navigation can be dismiss in any view controller
                        DESC
 
-  s.homepage         = 'https://github.com/<GITHUB_USERNAME>/ByvModalNav'
+  s.homepage         = 'https://github.com/byvapps/ByvModalNav'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Adrian' => 'adrian@byvapps.com' }
-  s.source           = { :git => 'https://github.com/<GITHUB_USERNAME>/ByvModalNav.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => 'https://github.com/byvapps/ByvModalNav.git', :tag => s.version.to_s }
+  # s.social_media_url = 'https://twitter.com/byvapps'
 
   s.ios.deployment_target = '8.0'
 
