@@ -24,14 +24,12 @@ open class ByvModalNav: UINavigationController, UINavigationControllerDelegate {
     }
     
     public func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
-        if let _viewControllers = self.viewControllers as? Array<UIViewController>, _viewControllers.count > 0 {
-            if !onlyInRoot || _viewControllers[0] == viewController {
-                let closeBtn = UIBarButtonItem.init(barButtonSystemItem: .stop, target: self, action: #selector(closePressed))
-                if onlyInRoot {
-                    viewController.navigationItem.leftBarButtonItem = closeBtn
-                } else {
-                    viewController.navigationItem.rightBarButtonItem = closeBtn
-                }
+        if !onlyInRoot || self.viewControllers[0] == viewController {
+            let closeBtn = UIBarButtonItem.init(barButtonSystemItem: .stop, target: self, action: #selector(closePressed))
+            if onlyInRoot {
+                viewController.navigationItem.leftBarButtonItem = closeBtn
+            } else {
+                viewController.navigationItem.rightBarButtonItem = closeBtn
             }
         }
     }
