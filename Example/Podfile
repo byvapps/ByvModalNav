@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'ByvModalNav_Example' do
+  pod 'ByvModalNav', :path => '../'
+
+  target 'ByvModalNav_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
