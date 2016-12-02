@@ -1,25 +1,212 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="ByvModalNav_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tX2-l5-9Cy">
+                                <rect key="frame" x="0.0" y="85" width="375" height="67"/>
+                                <color key="backgroundColor" white="0.87334526909722221" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="qT1-Co-3i9"/>
+                                </constraints>
+                                <state key="normal" title="Close only in root"/>
+                                <connections>
+                                    <segue destination="Pdr-ID-EOh" kind="presentation" id="ZaY-Il-yiM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J2Q-jb-r3m">
+                                <rect key="frame" x="0.0" y="198" width="375" height="67"/>
+                                <color key="backgroundColor" white="0.87334526909999999" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="4T2-Ih-VWg"/>
+                                </constraints>
+                                <state key="normal" title="Close allways"/>
+                                <connections>
+                                    <segue destination="WRA-iq-ZwJ" kind="presentation" id="Xxd-3H-cNM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bee-uU-qc3">
+                                <rect key="frame" x="0.0" y="300" width="375" height="67"/>
+                                <color key="backgroundColor" white="0.87334526909999999" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="Cdl-ho-Uh2"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="67" id="aFB-jk-skZ"/>
+                                </constraints>
+                                <state key="normal" title="Log dismiss handler"/>
+                                <connections>
+                                    <action selector="showModal:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="6Fz-JI-vfm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ei-s6-Ndi">
+                                <rect key="frame" x="0.0" y="402" width="375" height="67"/>
+                                <color key="backgroundColor" white="0.87334526909999999" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="67" id="GHi-Jl-rvM"/>
+                                    <constraint firstAttribute="height" constant="67" id="swZ-6a-MQH"/>
+                                </constraints>
+                                <state key="normal" title="This will never be dismissed!!!"/>
+                                <connections>
+                                    <action selector="notAllowed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="0uk-Ps-SAL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="J2Q-jb-r3m" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="3rY-GV-ovU"/>
+                            <constraint firstAttribute="trailing" secondItem="tX2-l5-9Cy" secondAttribute="trailing" id="R0y-7q-qq0"/>
+                            <constraint firstItem="J2Q-jb-r3m" firstAttribute="top" secondItem="tX2-l5-9Cy" secondAttribute="bottom" constant="46" id="Rfn-mi-XWv"/>
+                            <constraint firstAttribute="trailing" secondItem="bee-uU-qc3" secondAttribute="trailing" id="cCw-YR-oyh"/>
+                            <constraint firstItem="tX2-l5-9Cy" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="hv8-rE-Prs"/>
+                            <constraint firstItem="tX2-l5-9Cy" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="65" id="p4H-W2-8sg"/>
+                            <constraint firstItem="bee-uU-qc3" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="qGk-I4-OGA"/>
+                            <constraint firstItem="4Ei-s6-Ndi" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="qOp-mV-0SD"/>
+                            <constraint firstItem="4Ei-s6-Ndi" firstAttribute="top" secondItem="bee-uU-qc3" secondAttribute="bottom" constant="35" id="rN7-ty-5VS"/>
+                            <constraint firstAttribute="trailing" secondItem="J2Q-jb-r3m" secondAttribute="trailing" id="sZW-3g-Vrq"/>
+                            <constraint firstItem="bee-uU-qc3" firstAttribute="top" secondItem="J2Q-jb-r3m" secondAttribute="bottom" constant="35" id="wdL-b8-ftC"/>
+                            <constraint firstAttribute="trailing" secondItem="4Ei-s6-Ndi" secondAttribute="trailing" id="zuh-tV-Jh7"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="36" y="38.23088455772114"/>
+        </scene>
+        <!--Byv Modal Nav-->
+        <scene sceneID="fvu-RQ-3TJ">
+            <objects>
+                <navigationController id="WRA-iq-ZwJ" customClass="ByvModalNav" customModule="ByvModalNav" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ou9-OE-xmN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="onlyInRoot" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="EUL-st-tcL" kind="relationship" relationship="rootViewController" id="bcU-b6-BB1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zFO-EP-map" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1012" y="385"/>
+        </scene>
+        <!--Modal View-->
+        <scene sceneID="RUI-gq-qr5">
+            <objects>
+                <tableViewController storyboardIdentifier="tableViewId" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EUL-st-tcL" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="7MB-jn-qgj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="50D-ax-zi5">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="LoW-w1-coC" style="IBUITableViewCellStyleDefault" id="3gR-79-I28">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3gR-79-I28" id="Mrv-z0-g3f">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="59"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Push Me!!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LoW-w1-coC">
+                                                    <rect key="frame" x="15" y="0.0" width="325" height="59"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Oi9-cJ-yxP" kind="show" id="MPv-OQ-Ugk"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="EUL-st-tcL" id="6is-kf-L4x"/>
+                            <outlet property="delegate" destination="EUL-st-tcL" id="eAv-dI-MbM"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Modal View" id="Vfn-LQ-gPN"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XzK-Gx-6Zn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1926" y="38"/>
+        </scene>
+        <!--Details-->
+        <scene sceneID="qyw-Ub-HFV">
+            <objects>
+                <viewController id="Oi9-cJ-yxP" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CzW-Rg-X6f"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qgj-Zh-HPr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xdo-jz-QhA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If onlyInRoot = true in this view should not appear the close button" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0lJ-vo-MuJ">
+                                <rect key="frame" x="20" y="129" width="335" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0lJ-vo-MuJ" firstAttribute="leading" secondItem="xdo-jz-QhA" secondAttribute="leading" constant="20" id="2n7-QR-nC5"/>
+                            <constraint firstAttribute="trailing" secondItem="0lJ-vo-MuJ" secondAttribute="trailing" constant="20" id="5Lm-Nu-5UZ"/>
+                            <constraint firstItem="0lJ-vo-MuJ" firstAttribute="top" secondItem="CzW-Rg-X6f" secondAttribute="bottom" constant="65" id="N8c-5v-Qgl"/>
+                            <constraint firstItem="0lJ-vo-MuJ" firstAttribute="centerX" secondItem="xdo-jz-QhA" secondAttribute="centerX" id="dLH-iM-N5Z"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Details" id="NVh-gR-YvR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eGV-Ak-pLq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2893.5999999999999" y="37.331334332833585"/>
+        </scene>
+        <!--Byv Modal Nav-->
+        <scene sceneID="OyT-Y4-bwc">
+            <objects>
+                <navigationController id="Pdr-ID-EOh" customClass="ByvModalNav" customModule="ByvModalNav" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cCT-4J-i63">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="onlyInRoot" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="EUL-st-tcL" kind="relationship" relationship="rootViewController" id="6Kh-Yy-hZE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bfC-7N-MJN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1012" y="-388"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="bcU-b6-BB1"/>
+    </inferredMetricsTieBreakers>
 </document>
