@@ -40,7 +40,7 @@ open class ByvModalNav: UINavigationController, UINavigationControllerDelegate {
     }
     
     
-    func closePressed() {
+    @objc func closePressed() {
         if let handler = self.shouldDismissHandler, !handler() {
             return
         }
