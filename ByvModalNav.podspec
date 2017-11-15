@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = 'ByvModalNav'
-    s.version          = '1.0.1'
+    s.version          = '1.0.2'
     s.summary          = 'UINavigationController with auto close button'
 
     # This description is used to generate tags and improve search results.
@@ -31,6 +31,7 @@ Pod::Spec.new do |s|
     # s.social_media_url = 'https://twitter.com/byvapps'
 
     s.ios.deployment_target = '8.0'
+    s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
 
     s.source_files = 'ByvModalNav/Classes/**/*'
 
